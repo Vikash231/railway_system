@@ -17,6 +17,8 @@ class AddR(forms.Form):
 class AddST(forms.Form):
     sid=forms.CharField(max_length=50)
     sname=forms.CharField(max_length=50)
+    latitude=forms.CharField(max_length=50)
+    longitude=forms.CharField(max_length=50)
 
 class AddT(forms.Form):
     rid=forms.CharField(max_length=50)

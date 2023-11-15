@@ -130,6 +130,8 @@ def addST(request):
             a = Station()
             a.sid = data['sid']
             a.sname = data['sname']
+            a.latitude = data['latitude']
+            a.longitude = data['longitude']
             a.save()
             return redirect('/home/addST')
         else:
