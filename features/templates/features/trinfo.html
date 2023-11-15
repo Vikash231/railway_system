@@ -1,6 +1,6 @@
 {% extends 'features/srbase.html' %}
 {% block body%}
-<h2 style="text-align:center;"><span class="sty" style="font-size:50px;color:black;">Train Schedule</span></h2>
+<h2 style="text-align:center;"><span class="sty" style="font-size:50px;color:rgb(10, 134, 179);"><b>Train Schedule</b></span></h2>
 
     <table style="margin:100px 500px;font-size:30px;color:black;" class="table-striped table-bordered table-hover">
         <tr class="sty" style="color:black;padding:10px;">
@@ -18,5 +18,5 @@
     {% endfor %}
 
     </table>
-    <a href="{%url 'home:hom'%}" style="margin-left:550px"><button class="btn btn-success">Back To Homepage</button></a>
+    <a href="{%url 'home:hom'%}" style="margin-left:500px"><button class="btn btn-success">Back To Homepage</button></a>
 {% endblock%}

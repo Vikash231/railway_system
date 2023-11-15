@@ -12,7 +12,7 @@ def home(request):
 
 def logout(request):
     auth.logout(request)
-    return redirect("http://127.0.0.1:8500/")
+    return redirect("http://127.0.0.1:8000/")
 
 
 def log(request):

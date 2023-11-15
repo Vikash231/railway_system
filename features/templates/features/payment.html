@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>Payment</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <style>
         body
@@ -19,11 +19,67 @@
         .payform{
                     background-color:rgba(0,0,0,0.3);
                     height:450px;
-                }
+                    width: 600px;
+        }
          .white
          {
             color:white;
-            }
+         }
+        .det input{
+            position: relative;
+            width: 100%;
+            height: 50px;
+            background: #333;
+            border: none;
+            outline: none;
+            padding: 25px 10px 7.5px;
+            border-radius: 4px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.2em;
+        }
+        .group input{
+            position: relative;
+            width: 75%;
+            height: 45px;
+            background: #333;
+            border: none;
+            outline: none;
+            padding: 25px 10px 7.5px;
+            border-radius: 4px;
+            color: #fff;
+            font-weight: 500;
+            font-size: 1.5em;
+        }   
+        .row {
+            margin-left: 150px;
+        }
+        select {
+        width: 140px;
+        height: 35px;
+        padding: 5px 35px 5px 5px;
+        font-size: 13px;
+        border: 2px solid #ccc;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        background: url("arrow.svg") 96% / 15% no-repeat #eee;
+      }
+      input[type=submit] {
+        background-color: rgb(170, 12, 4);
+        border: none;
+        color: white;
+        padding: 16px 32px;
+        text-decoration: none;
+        font-size: 1.2em;
+        margin: 4px 2px;
+        cursor: pointer;
+        margin-left: 550px;
+        margin-top: 10px;
+     }
+     .inpay {
+        margin-left: 50px;
+     }
     </style>
 </head>
 <body>
@@ -34,25 +90,45 @@
     <div class="col-lg-6" style="background-color:rgba(256,256,256,0.4);height:450px;">
         <h3 style="text-align:center">Check Details</h3>
         <div class="col-lg-6">
-
+    <div class="det tno">
         Train no   :<br/><input type="text" value="{{tno}}" readonly name="tno"><br/><br/>
-    Train name :<br/><input type="text" value="{{tname}}" readonly name="tname"><br/><br/>
-    From       :<br/><input type="text" value="{{src}}" readonly name="src"><br/><br/>
-    To         :<br/><input type="text" value="{{des}}" readonly name="des"><br/><br/>
+    </div>
+    
+    <div class="det tname">
+        Train name :<br/><input type="text" value="{{tname}}" readonly name="tname"><br/><br/>
+    </div>
+    
+    <div class="det src">
+        From       :<br/><input type="text" value="{{src}}" readonly name="src"><br/><br/>
+    </div>
+   
+    <div class="det des">
+        To         :<br/><input type="text" value="{{des}}" readonly name="des"><br/><br/>
+    </div>
+    
 
     </div>
     <div class="col-lg-6">
-    Class      :<br/><input type="text" value="{{cls}}" readonly name="cls"><br/><br/>
-    No of Seats:<br/><input type="text" value="{{nos}}" readonly name="nos"><br/><br/>
-    Date       :<br/><input type="text" value="{{dt}}" readonly name="date"><br/><br/>
-    Total Price:<br/><input type="text" value="{{price}}" readonly name="price"><br/>
+    <div class="det cls">
+        Class:<input type="text" value="{{cls}}" readonly name="cls"><br/><br/>
+    </div>
+    <div class="det nos">
+        No of Seats:<br/><input type="text" value="{{nos}}" readonly name="nos"><br/><br/>
+    </div>
+    <div class="det date">
+        Date       :<br/><input type="text" value="{{dt}}" readonly name="date"><br/><br/>
+    </div>
+    <div class="det price">
+        Total Price:<br/><input type="text" value="{{price}}" readonly name="price"><br/>
+    </div>
     </div>
 
     </div>
     <div class="col-lg-6 payform">
-        <h3 style="text-align:center">Payment Method</h3>
+    <h3 style="text-align:center">Payment Method</h3>
+    <div class="inpay">
     <select id="selectMe" name="select">
-      <option value="option1">Credit or Debit card</option>
+      <option value="option1">Credit/debit card</option>
       <option value="option2">Paytm</option>
 
     </select>
@@ -70,10 +146,12 @@
 
        </div>
        <div id="option2" class="group">
-           <h3><span class="white">Click to proceed to Paytm Portal for payment</span></h3>
+           <h3><span class="white">Click Confirm Book to proceed to Paytm Portal for payment</span></h3>
        </div>
-    <input type="submit" value="Confirm Book" >
+    
     </div>
+    </div>
+    <input type="submit" value="Confirm Book" >
         </div>
 </form>
  <script>

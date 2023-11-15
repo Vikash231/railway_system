@@ -152,11 +152,6 @@ def addT(request):
         else:
             return HttpResponse('<h1>Invalid Data</h1>')
 
-
-
-
-
-
     a=Route.objects.all()
 
     return render(request,'features/addT.html',{'tr':a})
@@ -281,7 +276,7 @@ def book(request):
                 b=Reservation()
                 b.cls=cls
                 b.tno=tn1
-                b.status="C"
+                b.status="Confirm"
                 b.nos=30-c
                 b.amt=200
                 b.date=dt
@@ -293,7 +288,7 @@ def book(request):
                 e = Reservation()
                 e.cls = cls
                 e.tno = tn1
-                e.status = "W"
+                e.status = "Waiting"
                 e.nos = nos-(30 - c)
                 e.amt = price
                 e.date = dt
@@ -307,7 +302,7 @@ def book(request):
                 b = Reservation()
                 b.cls = cls
                 b.tno = tn1
-                b.status = "C"
+                b.status = "Confirm"
                 b.nos = nos
                 b.amt = price
                 b.date = dt
@@ -321,7 +316,7 @@ def book(request):
             b = Reservation()
             b.cls = cls
             b.tno = tn1
-            b.status = "W"
+            b.status = "Waiting"
             b.nos = nos
             b.amt = price
             b.date = dt
@@ -361,24 +356,24 @@ def cn(request):
         cls='X'
 
         for i in a:
-            if i.status=='C':
+            if i.status=='Confirm':
                 c=c+i.nos
             cls=i.cls
         a.delete()
         a=Reservation.objects.all()
         f=0
         for i in a:
-            if i.status=='W' and i.cls==cls:
+            if i.status=='Waiting' and i.cls==cls:
                 if i.nos<=c:
                     c=c-i.nos
-                    i.status='C'
+                    i.status='Confirm'
                     i.save()
                 else:
                     f=1
                     b=Reservation()
                     b.cls = i.cls
                     b.tno = i.tno
-                    b.status = "C"
+                    b.status = "Confirm"
                     b.nos = c
                     b.amt = 200
                     b.date = i.date
