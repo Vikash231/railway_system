@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     <style>
         body{
-            background-image:url('{% static "images/abc.jpg"%}');
+            background-image:url('{% static "images/abc3.jpg"%}');
             /* background-image: url("reg.png"); */
             position: absolute;
             width: 100%;
@@ -26,7 +26,7 @@
         .sty
         {
             font-family: 'Dancing Script', cursive;
-            color:white;
+            /* color:white; */
         }
         .hd
         {
@@ -63,6 +63,7 @@
         }
         .form1 {
             margin-left: 200px;
+            margin-top: 100px;
         }
         select {
         width: 170px;
@@ -101,6 +102,9 @@
         margin-left: 500px;
         border-radius: 12px;
      }
+     /* h3 {
+        color: rgb(14, 16, 17);
+     } */
     </style>
 </head>
 <body>
@@ -116,9 +120,9 @@
     <div class="form1">
         <form action="" method="post">
             {%csrf_token%}
-            <h3 style="display: inline;">Train Number:</h3>&nbsp;&nbsp;<input type="text" name="tno">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <h3 style="display: inline;color: rgb(14, 15, 17);">Train Number:</h3>&nbsp;&nbsp;<input type="text" name="tno">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             <h3 style="display: inline;">Train Name:</h3>&nbsp;&nbsp;<input type="text" name="tname">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <h3 style="display: inline;">Select Route:</h3>&nbsp;&nbsp;<select name="rid">
+            <h3 style="display: inline;margin-top: -5px;">Select Route:</h3>&nbsp;&nbsp;<select name="rid">
             {%for i in tr%}
                 <option value="{{i.rid}}">{{i.ostation}}-{{i.dstation}}</option>
             {%endfor%}

@@ -87,7 +87,7 @@ WSGI_APPLICATION = 'rail.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'mydb',
+        'NAME': 'mydb2',
         'USER': 'root',
         'PASSWORD': '12345',
         'HOST':'127.0.0.1',

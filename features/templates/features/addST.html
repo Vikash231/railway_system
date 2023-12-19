@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script" rel="stylesheet">
     <style>
         body{
-            background-image:url('{% static "images/abc.jpg"%}');
+            background-image:url('{% static "images/abc3.jpg"%}');
             /* background-image: url("reg.png"); */
             position: absolute;
             width: 100%;
@@ -22,7 +22,6 @@
             background-opacity:0.4;
 
 
-<<<<<<< HEAD
         }
         .sty
         {
@@ -64,6 +63,7 @@
         }
         .form1 {
             margin-left: 450px;
+            margin-top: 100px;
         }
         select {
         width: 140px;
@@ -125,14 +125,3 @@
     
 </body>
 </html>
-=======
-<form action="" method="post">
-    {%csrf_token%}
-    Station ID:<input type="text" name="sid">
-    Station Name:<input type="text" name="sname">
-    Latitude:<input type="text" name="latitude">
-    Longitude:<input type="text" name="longitude">
-    <input type="submit" class="btn btn-success">
-</form>
-{%endblock%}
->>>>>>> dc573cbae13876ab01adfe3d13470d5dd75dc8d1
